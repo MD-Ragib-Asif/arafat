@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Transaction</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <style>
+    body {
+      background-color: #f8f9fa;
+      padding: 50px;
+    }
+
+    .transaction-form {
+      max-width: 400px;
+      margin: auto;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="transaction-form">
+    <h2 class="mb-4">Transaction Interface</h2>
+
+    <form method="post" action="{% url 'create_transaction' %}">
+      {% csrf_token %}
+
+      <div class="form-group">
+        <label for="userType">User Type:</label>
+        <select class="form-control" id="userType" name="userType">
+          <option value="manager">Manager</option>
+          <option value="member">Member</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="transactionType">Transaction Type:</label>
+        <select class="form-control" id="transactionType" name="transactionType">
+          <option value="deposit">Deposit</option>
+          <option value="withdraw">Withdraw</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="amount">Amount:</label>
+        <input type="number" class="form-control" id="amount" name="amount" placeholder="Enter amount">
+      </div>
+
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Chat Inbox</title>
+	<style>
+		.account {
+			border: 1px solid black;
+			padding: 10px;
+			margin: 10px;
+			max-height: 600px;
+			overflow-y: scroll;
+		}
+		.account .message {
+			margin-bottom: 10px;
+		}
+	</style>
+</head>
+<body>
+	<div class="account">
+		<div class="message">
+			<p>Hi {{name}} !</p>
+			<p>You have {{balance}} taka in your account.</p>
+		</div>
+	</div>
+    <div>
+        <a href="{% url 'home' %}">Home</a>
+		<a href="{% url 'suggestion_view' %}">Suggestions</a>
+        <a href="{% url 'chat_view' %}">Chat</a>
+    </div>
+
+</body>
+</html>
+

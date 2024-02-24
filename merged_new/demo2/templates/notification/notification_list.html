@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Notifications</title>
+</head>
+<body>
+    <h1>Notifications</h1>
+
+    <button><a href="{% url 'home' %}">Home</a></button>
+    {% for notification in notifications %}
+        <div>
+            <h3>{{ notification.title }}</h3>
+            <p>{{ notification.message }}</p>
+            <p>Created at: {{ notification.created_at }}</p>
+            <hr>
+        </div>
+    {% empty %}
+        <p>No notifications available.</p>
+    {% endfor %}
+</body>
+</html>

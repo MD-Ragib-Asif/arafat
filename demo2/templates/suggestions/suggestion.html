@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Chat Inbox</title>
+	<style>
+		.suggestion {
+			border: 1px solid black;
+			padding: 10px;
+			margin: 10px;
+			max-height: 600px;
+			overflow-y: scroll;
+		}
+		.suggestion .message {
+			margin-bottom: 10px;
+		}
+		.suggestion .message .username {
+			font-weight: bold;
+			margin-right: 5px;
+		}
+		.suggestion .message .datetime {
+			font-size: 12px;
+			color: gray;
+			margin-left: 5px;
+		}
+	</style>
+</head>
+<body>
+	<div class="suggestion">
+        {% for i in all %}
+		<div class="message">
+			<span class="username">{{i.user}}</span>
+			<span class="datetime">{{i.dt}}</span>
+			<p>{{i.content}}</p>
+		</div>
+        {% endfor %}
+	</div>
+    <div>
+        {% if role_choice == 'Member' %}
+            <form method="post" >
+                {% csrf_token %}
+                <label for="content">Message: </label>
+                <input type="text" name="content" ><br>
+            </form>
+        {% else %}
+            <p>Here are the suggestions from users end</p>
+        {% endif %}
+    </div>
+    <div>
+        <a href="{% url 'home' %}">Home</a>
+        <a href="{% url 'chat_view' %}">Chat</a>
+		<a href="{% url 'transaction_view' %}">Transaction</a>  
+		{% if user.is_superuser %}
+		<a href="{% url 'account_view' %}">Check Balance</a> 
+		{% endif %}
+    </div>
+
+</body>
+</html>
+
