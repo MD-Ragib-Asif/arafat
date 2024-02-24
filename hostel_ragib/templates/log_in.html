@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <title>Login Page</title>
+  <style>
+    body {
+      background-image: url('background.jpg'); /* Add the path to your background image */
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      color: #0c0000;
+    }
+
+    .logo-container {
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    .logo-container img {
+      max-width: 150px;
+      height: auto;
+    }
+
+    .login-container {
+      max-width: 400px;
+      margin: auto;
+      margin-top: 30px;
+      background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    .forgot-password {
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container logo-container">
+  <img src="Logo/hmm.png" alt="Your Logo"> <!-- Add the path to your logo image -->
+</div>
+
+<div class="container login-container">
+  <form>
+    <div class="form-group">
+      <label for="username">Username</label>
+      <input type="text" class="form-control" id="username" placeholder="Enter username">
+    </div>
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input type="password" class="form-control" id="password" placeholder="Enter password">
+      <small class="form-text text-muted forgot-password"><a href="#">Forgot Password?</a></small>
+    </div>
+    <button type="submit" class="btn btn-primary btn-block">Login</button>
+  </form>
+
+  <div class="text-center mt-3">
+    <p>New user? <a href="#">Sign Up</a></p>
+  </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>
